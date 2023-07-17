@@ -38,9 +38,15 @@
         "stack_images_on_mobile": false,
         "show_text_below": false
       }
+    },
+    "featured_ollection": {
+      "type": "featured-collection",
+      "settings": {
+      }
     }
   },
   "order": [
-    "image_banner"
+    "image_banner",
+    "featured_ollection"
   ]
 }
