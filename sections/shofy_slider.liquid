@@ -1,0 +1,110 @@
+
+<div class="tp-slider-active-2 swiper-container">
+   <div class="swiper-wrapper">
+   {% for block in section.blocks %}
+      {% assign s = block.settings %}
+      <div class="tp-slider-item-2 tp-slider-height-2 p-relative swiper-slide grey-bg-5 d-flex align-items-end">
+         <div class="tp-slider-2-shape">
+            <img class="tp-slider-2-shape-1" src="assets/img/slider/2/shape/shape-1.png" alt="">
+         </div>
+            <div class="container">
+            <div class="row align-items-center">
+               <div class="col-xl-6 col-lg-6 col-md-6">
+                     <div class="tp-slider-content-2">
+                        <span>{{ s.slider_subtitle }}</span>
+                        <h3 class="tp-slider-title-2">{{ s.slider_title }}</h3>
+                        <div class="tp-slider-btn-2">
+                        <a href="{{ s.btn_url }}" class="tp-btn tp-btn-border">{{ s.btn_text }}</a>
+                        </div>
+                     </div>
+               </div>
+               <div class="col-xl-6 col-lg-6 col-md-6">
+                     <div class="tp-slider-thumb-2-wrapper p-relative">
+                        <div class="tp-slider-thumb-2-shape">
+                           <img class="tp-slider-thumb-2-shape-1" src="assets/img/slider/2/shape/shape-2.png" alt="">
+                           <img class="tp-slider-thumb-2-shape-2" src="assets/img/slider/2/shape/shape-3.png" alt="">
+                        </div>
+                        <div class="tp-slider-thumb-2 text-end">
+                           <span class="tp-slider-thumb-2-gradient"></span>
+                              {% if block.settings.slider_img != blank %}
+                                 <img src="{{ s.slider_img | img_url: 'master' }}" alt="">
+                              {% else %}
+                                 {{ 'product-1' | placeholder_svg_tag }}
+                              {% endif %}
+                        </div>
+                     </div>
+               </div>
+            </div>
+            </div>
+      </div>
+   {% endfor %}
+   </div>
+   <div class="tp-swiper-dot tp-slider-2-dot"></div>
+</div>
+
+<!-- slider area end -->
+
+
+{% schema %}
+   {
+      "name": "Slider",
+      "class": "tp-slider-area p-relative z-index-1",
+      "tag": "section",
+      "settings": [
+
+      ],
+      "blocks": [
+         {
+            "name": "Slider",
+            "type": "slider",
+            "limit": 3,
+            "settings": [
+               {
+                  "type": "text",
+                  "id": "slider_subtitle",
+                  "label": "Sub Title",
+                  "default": "New Arrivals 2023"
+               },
+               {
+                  "type": "text",
+                  "id": "slider_title",
+                  "label": "Title",
+                  "default": "The Clothing Collection"
+               },
+               {
+                  "type": "text",
+                  "id": "btn_text",
+                  "label": "Button Text",
+                  "default": "Shop Collection"
+               },
+               {
+                  "type": "url",
+                  "id": "btn_url",
+                  "label": "Button Url"
+               },
+               {
+                  "type": "image_picker",
+                  "id": "slider_img",
+                  "label": "Slider Image"
+               }
+            ]
+         }
+      ],
+      "presets": [
+         {
+            "name": "Shofy Slider",
+            "blocks": [
+               {
+                  "type": "slider"
+               },
+               {
+                  "type": "slider"
+               },
+               {
+                  "type": "slider"
+               }
+            ]
+         }
+      ]
+   }
+{% endschema %}

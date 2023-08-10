@@ -1,3 +1,15 @@
+{% liquid
+   assign s = section.settings
+   assign followers = s.followers
+   assign phone = s.number
+   assign follow-url = s.follow_url
+   assign logo = s.logo
+   assign log_url = s.log_url
+   assign menu = s.menu
+%}
+
+
+
 <header>
   <div class="tp-header-area tp-header-style-darkRed tp-header-height">
      <!-- header top start  -->
@@ -7,23 +19,23 @@
               <div class="col-md-6">
                  <div class="tp-header-info d-flex align-items-center">
                     <div class="tp-header-info-item">
-                       <a href="#">
+                       <a href="{{ follow-url | default: '#'  }}">
                           <span>
                              <svg width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M8 0H5.81818C4.85376 0 3.92883 0.383116 3.24688 1.06507C2.56493 1.74702 2.18182 2.67194 2.18182 3.63636V5.81818H0V8.72727H2.18182V14.5455H5.09091V8.72727H7.27273L8 5.81818H5.09091V3.63636C5.09091 3.44348 5.16753 3.25849 5.30392 3.1221C5.44031 2.98571 5.6253 2.90909 5.81818 2.90909H8V0Z" fill="currentColor"/>
                              </svg>                                    
-                          </span> 7500k Followers
+                          </span> {{ followers }}
                        </a>
                     </div>
                     <div class="tp-header-info-item">
-                       <a href="tel:402-763-282-46">
+                       <a href="tel:{{ phone }}">
                           <span>
                              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M1.359 2.73916C1.59079 2.35465 2.86862 0.958795 3.7792 1.00093C4.05162 1.02426 4.29244 1.1883 4.4881 1.37943H4.48885C4.93737 1.81888 6.22423 3.47735 6.29648 3.8265C6.47483 4.68282 5.45362 5.17645 5.76593 6.03954C6.56213 7.98771 7.93402 9.35948 9.88313 10.1549C10.7455 10.4679 11.2392 9.44752 12.0956 9.62511C12.4448 9.6981 14.1042 10.9841 14.5429 11.4333V11.4333C14.7333 11.6282 14.8989 11.8698 14.9214 12.1422C14.9553 13.1016 13.4728 14.3966 13.1838 14.5621C12.502 15.0505 11.6125 15.0415 10.5281 14.5373C7.50206 13.2784 2.66618 8.53401 1.38384 5.39391C0.893174 4.31561 0.860062 3.42016 1.359 2.73916Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 <path d="M9.84082 1.18318C12.5534 1.48434 14.6952 3.62393 15 6.3358" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 <path d="M9.84082 3.77927C11.1378 4.03207 12.1511 5.04544 12.4039 6.34239" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                              </svg>                                   
-                          </span> +(402) 763 282 46
+                          </span> {{ phone }}
                        </a>
                     </div>
                  </div>
@@ -93,223 +105,48 @@
               <div class="row align-items-center">
                  <div class="col-xl-2 col-lg-5 col-md-5 col-sm-4 col-6">
                     <div class="logo">
-                       <a href="index.html">
-                          <img src="assets/img/logo/logo.svg" alt="logo">
-                       </a>
+                        <a href="{{ log_url }}">
+                           {% if logo != blank %}
+                              <img src="{{ logo | img_url: 'master' }}" alt="logo">
+                              {% else %}
+                              {% comment %} {{ 'image' | placeholder_svg_tag: 'placeholder-svg gray-bg' }} {% endcomment %}
+                              {{ shop.name }}
+                           {% endif %}
+                        </a>
                     </div>
                  </div>
+
                  <div class="col-xl-5 d-none d-xl-block">
                     <div class="main-menu menu-style-2">
                        <nav class="tp-main-menu-content">
-                          <ul>
-                             <li class="has-dropdown has-mega-menu">
-                                <a href="index.html">Home</a>
-                                <div class="home-menu tp-submenu tp-mega-menu">
-                                   <div class="row row-cols-1 row-cols-lg-4 row-cols-xl-5">
-                                      <div class="col">
-                                         <div class="home-menu-item ">
-                                            <a href="index.html">
-                                               <div class="home-menu-thumb p-relative fix">
-                                                  <img src="assets/img/menu/menu-home-1.jpg" alt="">
-                                               </div>
-                                               <div class="home-menu-content">
-                                                  <h5 class="home-menu-title">Electronics </h5>
-                                               </div>
-                                            </a>
-                                         </div>
-                                      </div>
-                                      <div class="col">
-                                         <div class="home-menu-item ">
-                                            <a href="index-2.html">
-                                               <div class="home-menu-thumb p-relative fix">
-                                                  <img src="assets/img/menu/menu-home-2.jpg" alt="">
-                                               </div>
-                                               <div class="home-menu-content">
-                                                  <h5 class="home-menu-title">Fashion</h5>
-                                               </div>
-                                            </a>
-                                         </div>
-                                      </div>
-                                      <div class="col">
-                                         <div class="home-menu-item ">
-                                            <a href="index-3.html">
-                                               <div class="home-menu-thumb p-relative fix">
-                                                  <img src="assets/img/menu/menu-home-3.jpg" alt="">
-                                               </div>
-                                               <div class="home-menu-content">
-                                                  <h5 class="home-menu-title">Beauty</h5>
-                                               </div>
-                                            </a>
-                                         </div>
-                                      </div>
-                                      <div class="col">
-                                         <div class="home-menu-item ">
-                                            <a href="index-4.html">
-                                               <div class="home-menu-thumb p-relative fix">
-                                                  <img src="assets/img/menu/menu-home-4.jpg" alt="">
-                                               </div>
-                                               <div class="home-menu-content">
-                                                  <h5 class="home-menu-title">Jewelry </h5>
-                                               </div>
-                                            </a>
-                                         </div>
-                                      </div>
-                                      <div class="col">
-                                         <div class="home-menu-item ">
-                                            <a href="index-5.html">
-                                               <div class="home-menu-thumb p-relative fix">
-                                                  <img src="assets/img/menu/menu-home-5.jpg" alt="">
-                                               </div>
-                                               <div class="home-menu-content">
-                                                  <h5 class="home-menu-title">Grocery</h5>
-                                               </div>
-                                            </a>
-                                         </div>
-                                      </div>
-                                   </div>
-                                </div>
-                             </li>
-                             <li  class="has-dropdown has-mega-menu">
-                                <a href="shop.html">Shop</a>
-                                <div class="shop-mega-menu tp-submenu tp-mega-menu">
-                                   <div class="row">
-                                      <div class="col-lg-2">
-                                         <div class="shop-mega-menu-list">
-                                               <a href="shop.html" class="shop-mega-menu-title">Shop Pages</a>
-                                               <ul>
-                                                   <li><a href="shop-category.html">Grid Category</a></li>
-                                                   <li><a href="shop.html">Grid Layout</a></li>
-                                                   <li><a href="shop-list.html">List Layout</a></li>
-                                                   <li><a href="shop-masonary.html">Masonary Layout</a></li>
-                                                   <li><a href="shop-full-width.html">Full width Layout</a></li>
-                                                   <li><a href="shop-1600.html">1600px Layout</a></li>
-                                                   <li><a href="shop.html">Left Sidebar</a></li>
-                                                   <li><a href="shop-right-sidebar.html">Right Sidebar</a></li>
-                                                   <li><a href="shop-no-sidebar.html">Hidden Sidebar</a></li>
-                                               </ul>
-                                         </div>
-                                      </div>
-                                      <div class="col-lg-2">
-                                         <div class="shop-mega-menu-list">
-                                               <a href="shop.html" class="shop-mega-menu-title">Features</a>
-                                               <ul>
-                                                  <li><a href="shop-filter-dropdown.html">Filter Dropdown</a></li>
-                                                  <li><a href="shop-filter-offcanvas.html">Filters Offcanvas</a></li>
-                                                  <li><a href="shop.html">Filters Sidebar</a></li>
-                                                  <li><a href="shop-load-more.html">Load More button</a></li>
-                                                  <li><a href="shop-infinite-scroll.html">Infinit scrolling</a></li>
-                                                  <li><a href="shop-list.html">Collections list</a></li>
-                                                  <li><a href="shop.html">Hidden search</a></li>
-                                                  <li><a href="shop.html">Search Full screen</a></li>
-                                               </ul>
-                                         </div>
-                                      </div>
-                                      <div class="col-lg-2">
-                                         <div class="shop-mega-menu-list">
-                                               <a href="shop.html" class="shop-mega-menu-title">Hover Style</a>
-                                               <ul>
-                                                  <li><a href="shop.html">Hover Style 1</a></li>
-                                                  <li><a href="shop.html">Hover Style 2</a></li>
-                                                  <li><a href="shop.html">Hover Style 3</a></li>
-                                                  <li><a href="shop.html">Hover Style 4</a></li>
-                                               </ul>
-                                         </div>
-                                      </div>
-                                      <div class="col-lg-3">
-                                         <div class="shop-mega-menu-img">
-                                            <img src="assets/img/menu/product/menu-product-img-1.jpg" alt="">
-                                            <div class="shop-mega-menu-btn">
-                                               <a href="shop-category.html" class="tp-menu-showcase-btn tp-menu-showcase-btn-2">Phones</a>
-                                            </div>
-                                         </div>
-                                      </div>
-                                      <div class="col-lg-3">
-                                         <div class="shop-mega-menu-img">
-                                            <img src="assets/img/menu/product/menu-product-img-2.jpg" alt="">
-                                            <div class="shop-mega-menu-btn">
-                                               <a href="shop-category.html" class="tp-menu-showcase-btn tp-menu-showcase-btn-2">Cameras</a>
-                                            </div>
-                                         </div>
-                                      </div>
-                                   </div>
-                                </div>
-                            </li>
-                             <li class="has-dropdown has-mega-menu ">
-                                
-                                <a href="shop.html">Products</a>
-                                <ul class="tp-submenu tp-mega-menu mega-menu-style-2">
-                                   <!-- first col -->
-                                   <li class="has-dropdown">
-                                      <a href="shop.html" class="mega-menu-title">Shop Page</a>
-                                      <ul class="tp-submenu">
-                                         <li><a href="shop-category.html">Only Categories</a></li>
-                                         <li><a href="shop-filter-offcanvas.html">Shop Grid</a></li>
-                                         <li><a href="shop.html">Shop Grid with Sideber</a></li>
-                                         <li><a href="shop-list.html">Shop List</a></li>
-                                         <li><a href="shop-category.html">Categories</a></li>
-                                         <li><a href="product-details.html">Product Details</a></li>
-                                         <li><a href="product-details-progress.html">Product Details Progress</a></li>
-                                      </ul>
-                                   </li>
-                                   <!-- third col -->
-                                   <li  class="has-dropdown">
-                                      <a href="product-details.html" class="mega-menu-title">Products</a>
-                                      <ul class="tp-submenu">
-                                         
-                                         <li><a href="product-details.html">Product Simple</a></li>
-                                         <li><a href="product-details-video.html">With Video</a></li>
-                                         <li><a href="product-details-countdown.html">With Countdown Timer</a></li>
-                                         <li><a href="product-details-presentation.html">Product Presentation</a></li>
-                                         <li><a href="product-details-swatches.html">Variations Swatches</a></li>
-                                         <li><a href="product-details-list.html">List View</a></li>
-                                         <li><a href="product-details-gallery.html">Details Gallery</a></li>
-                                         <li><a href="product-details-slider.html">With Slider</a></li>
-                                      </ul>
-                                   </li>
-                                   <!-- third col -->
-                                   <li  class="has-dropdown">
-                                      <a href="shop.html" class="mega-menu-title">eCommerce</a>
-                                      <ul class="tp-submenu">
-                                         <li><a href="cart.html">Shopping Cart</a></li>
-                                         <li><a href="order.html">Track Your Order</a></li>
-                                         <li><a href="compare.html">Compare</a></li>
-                                         <li><a href="wishlist.html">Wishlist</a></li>
-                                         <li><a href="checkout.html">Checkout</a></li>
-                                         <li><a href="profile.html">My account</a></li>
-                                      </ul>
-                                   </li>
-
-                                   <!-- second col -->
-                                   <li  class="has-dropdown">
-                                      <a href="shop.html" class="mega-menu-title">More Pages</a>
-                                      <ul class="tp-submenu">
-                                         
-                                        
-                                         <li><a href="about.html">About</a></li>
-                                         <li><a href="login.html">Login</a></li>
-                                         <li><a href="register.html">Register</a></li>
-                                         <li><a href="forgot.html">Forgot Password</a></li>
-                                         <li><a href="404.html">404 Error</a></li>
-                                      </ul>
-                                   </li>
-
-                                </ul>
-                             </li>
-                             <li><a href="shop-category.html">Categories</a></li>
-                             <li class="has-dropdown">
-                                <a href="blog.html">Blog</a>
-                                <ul class="tp-submenu">
-                                   <li><a href="blog.html">Blog Standard</a></li>
-                                   <li><a href="blog-grid.html">Blog Grid</a></li>
-                                   <li><a href="blog-list.html">Blog List</a></li>
-                                   <li><a href="blog-details-2.html">Blog Details Full Width</a></li>
-                                   <li><a href="blog-details.html">Blog Details</a></li>
-                                </ul>
-                             </li>
-                             <li><a href="contact.html">Contact</a></li>
-                          </ul>
+                           <ul>
+                              {% for link in menu.links %}
+                                 <li class="{% if link.links != blank %} has-dropdown has-mega-menu {% endif %}">
+                                    {% if link.links != blank %}
+                                       <a href="{{ link.url }}">{{ link.title }}</a>
+                                       <ul class="tp-submenu tp-mega-menu mega-menu-style-2">
+                                          {% for childlink in link.links %}
+                                             <li class="has-dropdown">
+                                                <a href="{{ childlink.url }}" class="mega-menu-title">{{ childlink.title }}</a>
+                                                {% if childlink.links != blank %}
+                                                   <ul class="tp-submenu">
+                                                      {% for grandchild in childlink.links %}
+                                                         <li><a href="{{ grandchild.url }}">{{ grandchild.title }}</a></li>
+                                                      {% endfor %}
+                                                   </ul>
+                                                {% endif %}
+                                             </li>
+                                          {% endfor %}
+                                       </ul>
+                                       {% else %}
+                                       <a href="{{ link.url }}">{{ link.title }}</a> 
+                                    {% endif %}
+                                 </li>
+                              {% endfor %}
+                           </ul>
                        </nav>
                     </div>
+                    
                     <div class="tp-category-menu-wrapper d-none">
                        <nav class="tp-category-menu-content">
                           <ul>
@@ -558,3 +395,55 @@
      </div>
   </div>
 </header>
+
+
+{% schema %}
+   {
+      "name": "Header",
+      "settings": [
+         {
+            "type": "header",
+            "content": "Top Bar"
+         },
+         {
+            "type": "text",
+            "id": "followers",
+            "label": "Follow Us",
+            "default": "7500k Followers"
+         },
+         {
+            "type": "text",
+            "id": "number",
+            "label": "Phone",
+            "default": "+(402) 763 282 46"
+         },
+         {
+            "type": "url",
+            "id": "follow_url",
+            "label": "Floowers Url"
+         },
+
+
+
+         {
+            "type": "header",
+            "content": "Main Header"
+         },
+         {
+            "type": "image_picker",
+            "id": "logo",
+            "label": "Logo"
+         },
+         {
+            "type": "url",
+            "id": "log_url",
+            "label": "Logo Url"
+         },
+         {
+            "type": "link_list",
+            "id": "menu",
+            "label": "Menu"
+         }
+      ]
+   }
+{% endschema %}
