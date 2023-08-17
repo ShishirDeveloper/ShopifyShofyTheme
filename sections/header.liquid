@@ -43,20 +43,21 @@
               <div class="col-md-6">
                  <div class="tp-header-top-right tp-header-top-black d-flex align-items-center justify-content-end">
                     <div class="tp-header-top-menu d-flex align-items-center justify-content-end">
-                       <div class="tp-header-top-menu-item tp-header-lang">
-                          <span class="tp-header-lang-toggle" id="tp-header-lang-toggle">English</span>
-                          <ul>
-                             <li>
-                                <a href="#">Spanish</a>
-                             </li>
-                             <li>
-                                <a href="#">Russian</a>
-                             </li>
-                             <li>
-                                <a href="#">Portuguese</a>
-                             </li>
-                          </ul>
-                       </div>
+
+                     {% form 'localization' %}
+                        <div class="tp-header-top-menu-item tp-header-lang">
+                           <span class="tp-header-lang-toggle" id="tp-header-lang-toggle">{{ localization.language.name }}</span>
+                           <ul>
+                              {% for language in localization.available_languages %}
+                                 <li>
+                                    <a href="#" data-lang="{{language.iso_code}}">{{ localization.name }}</a>
+                                 </li>
+                              {% endfor %}
+                           </ul>
+                           <input type="hidden" id="language_code" name="language_code" value="{{ localization.language.iso_code }}">
+                        </div>
+                     {% endform %}
+
                        <div class="tp-header-top-menu-item tp-header-currency">
                           <span class="tp-header-currency-toggle" id="tp-header-currency-toggle">USD</span>
                           <ul>
@@ -110,7 +111,7 @@
                               <img src="{{ logo | img_url: 'master' }}" alt="logo">
                               {% else %}
                               {% comment %} {{ 'image' | placeholder_svg_tag: 'placeholder-svg gray-bg' }} {% endcomment %}
-                              {{ shop.name }}
+                              <h2>Logo</h2>
                            {% endif %}
                         </a>
                     </div>
@@ -374,7 +375,7 @@
                                    <path d="M7.70365 10.1018H7.74942" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                    <path d="M13.5343 10.1018H13.5801" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>    
-                                <span class="tp-header-action-badge">13</span>                                                                          
+                                <span class="tp-header-action-badge">{{ cart.item_count }}</span>                                                                          
                              </button>
                           </div>
                           <div class="tp-header-action-item tp-header-hamburger mr-20 d-xl-none">

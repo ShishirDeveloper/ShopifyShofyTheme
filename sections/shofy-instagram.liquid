@@ -1,0 +1,94 @@
+{% liquid
+    assign s = section.settings 
+    assign insta_icon = s.insta_icon
+    assign sub_title = s.sub_title
+    assign title = s.title
+%}
+
+
+<div class="container-fluid pl-20 pr-20">
+    <div class="row row-cols-lg-5 row-cols-sm-2 row-cols-1 gx-2 gy-2 gy-lg-0">
+
+        {% for item in section.blocks %}
+            {% assign loop = forloop.index %}
+            <div class="col">
+                <div class="tp-instagram-item-2 w-img">
+                   <img src="{{ item.settings.insta_img | img_url: 'master' }}" alt="">
+                   <div class="tp-instagram-icon-2">
+                      <a href="{{ item.settings.insta_img | img_url: 'master' }}" class="popup-image"><i class="fa-brands fa-instagram"></i></a>
+                   </div>
+                </div>
+             </div>
+
+
+            {% if loop == 2 %}
+                <div class="col">
+                    <div class="tp-instagram-banner text-center">
+                        <div class="tp-instagram-banner-icon mb-40">
+                            <a href="#">
+                                <img src="{{ insta_icon | img_url: 'master' }}" alt="">
+                            </a>
+                        </div>
+                        <div class="tp-instagram-banner-content">
+                            <span>{{ sub_title }}</span>
+                            <a href="#">{{ title }}</a>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+
+
+ {% schema %}
+    {
+       "name": "Shofy Instagram",
+       "tag": "section",
+       "class": "tp-instagram-area",
+       "settings": [
+        {
+            "type": "image_picker",
+            "id": "insta_icon",
+            "label": "Icon"
+        },
+        {
+            "type": "url",
+            "id": "ins_url",
+            "label": "Icon Url"
+        },
+        {
+            "type": "text",
+            "id": "sub_title",
+            "label": "Sub Title",
+            "default": "Follow Us On"
+        },
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Titile",
+            "default": "Instagram"
+        }
+       ],
+       "blocks": [
+          {
+             "name": "Instagram",
+             "type": "instagram",
+             "limit": 4,
+             "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "insta_img",
+                    "label": "Image"
+                }
+             ]
+          }
+       ],
+       "presets": [
+          {
+             "name": "shofy-instagram"
+          }
+       ]
+    }
+ {% endschema %}

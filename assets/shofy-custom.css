@@ -1,0 +1,5 @@
+.tp-category-thumb-2 a img {
+    height: 263px;
+    width: 100%;
+    object-fit: cover;
+}
