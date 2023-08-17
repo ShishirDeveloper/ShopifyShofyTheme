@@ -1,5 +1,6 @@
 {
   "sections": {
+<<<<<<< HEAD
     "shofy_slider": {
       "type": "shofy-slider"
     },
@@ -46,6 +47,50 @@
     "shofy_blog",
     "shofy_feature",
     "shofy_instagram"
+=======
+    "cf3d0aa4-cdf5-4c05-bff2-95b1943b6a4c": {
+      "type": "shofy_slider",
+      "blocks": {
+        "template--20045356859702__cf3d0aa4-cdf5-4c05-bff2-95b1943b6a4c-slider-1": {
+          "type": "slider",
+          "settings": {
+            "slider_subtitle": "New Arrivals 2023",
+            "slider_title": "The Clothing Collection",
+            "btn_text": "Shop Collection",
+            "btn_url": ""
+          }
+        },
+        "template--20045356859702__cf3d0aa4-cdf5-4c05-bff2-95b1943b6a4c-slider-2": {
+          "type": "slider",
+          "settings": {
+            "slider_subtitle": "New Arrivals 2023",
+            "slider_title": "The Clothing Collection",
+            "btn_text": "Shop Collection",
+            "btn_url": ""
+          }
+        },
+        "template--20045356859702__cf3d0aa4-cdf5-4c05-bff2-95b1943b6a4c-slider-3": {
+          "type": "slider",
+          "settings": {
+            "slider_subtitle": "New Arrivals 2023",
+            "slider_title": "The Clothing Collection",
+            "btn_text": "Shop Collection",
+            "btn_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--20045356859702__cf3d0aa4-cdf5-4c05-bff2-95b1943b6a4c-slider-1",
+        "template--20045356859702__cf3d0aa4-cdf5-4c05-bff2-95b1943b6a4c-slider-2",
+        "template--20045356859702__cf3d0aa4-cdf5-4c05-bff2-95b1943b6a4c-slider-3"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "cf3d0aa4-cdf5-4c05-bff2-95b1943b6a4c"
+>>>>>>> 831adf531d7866f1ecb2c7cd31e37e32dc063f26
   ]
 }
 <<<<<<< HEAD

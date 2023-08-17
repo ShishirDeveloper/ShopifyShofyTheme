@@ -26,6 +26,11 @@
     "header": {
       "type": "header",
       "settings": {
+        "followers": "7500k Followers",
+        "number": "+(402) 763 282 46",
+        "follow_url": "",
+        "log_url": "",
+        "menu": "header-menu"
       }
     }
   },
