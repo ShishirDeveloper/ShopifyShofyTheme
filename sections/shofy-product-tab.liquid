@@ -1,0 +1,108 @@
+{% liquid
+    assign s = section.settings
+    assign sub_title = s.sub_title
+    assign title = s.title
+%}
+
+<div class="container">
+    <div class="row">
+        <div class="col-xl-12">
+            <div class="tp-section-title-wrapper-2 text-center mb-35">
+            <span class="tp-section-title-pre-2">
+                {{ s.sub_title }}
+                <svg width="82" height="22" viewBox="0 0 82 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M81 14.5798C0.890564 -8.05914 -5.81154 0.0503902 5.00322 21" stroke="currentColor" stroke-opacity="0.3" stroke-width="2" stroke-miterlimit="3.8637" stroke-linecap="round"/>
+                </svg>
+            </span>
+            <h3 class="tp-section-title-2">{{ s.title }}</h3>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-12">
+            <div class="tp-product-tab-2 tp-tab mb-50 text-center">
+            <nav>
+                <div class="nav nav-tabs justify-content-center" id="nav-tab" role="tablist">
+                    {% for item in section.blocks %}
+                    {% assign loop = forloop.index %}
+                        <button class="nav-link {% if loop == 1 %} active {% endif %}" id="nav-{{ item.settings.title | handleize }}-tab" data-bs-toggle="tab" data-bs-target="#nav-{{ item.settings.title | handleize }}" type="button" role="tab" aria-controls="nav-{{ item.settings.title | handleize }}" aria-selected="true">
+                            {{ item.settings.title }}
+                            <span class="tp-product-tab-tooltip">{{ item.settings.collection.all_products_count }}</span>
+                        </button>
+                    {% endfor %}
+
+                </div>
+                </nav>                         
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="row">
+        <div class="col-xl-12">
+            <div class="tab-content" id="nav-tabContent">
+                {% for collection in section.blocks %}
+                {% assign loop = forloop.index %}
+                    <div class="tab-pane fade {% if loop == 1 %} show active {% endif %}" id="nav-{{ collection.settings.title | handleize }}" role="tabpanel" aria-labelledby="nav-{{ collection.settings.title | handleize }}-tab" tabindex="0">
+                        <div class="row">
+                            {% for product in collection.settings.collection.products %}
+                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                                    {% render 'shofy-single-product', product: product %}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>  
+                {% endfor %}
+                    
+        </div>
+    </div>
+</div>
+
+
+ {% schema %}
+    {
+       "name": " Shofy Product Tab",
+       "class": "tp-product-area pb-90",
+       "tag": "section",
+       "settings": [
+            {
+                "type": "text",
+                "id": "sub_title",
+                "label": "Sub Title",
+                "default": "All Product Shop"
+            },
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Titile",
+                "default": "Customer Favorite Style Product"
+            }
+       ],
+       "blocks": [
+          {
+             "name": "Product Tab",
+             "type": "product-tab",
+             "limit": 3,
+             "settings": [
+                {
+                   "type": "text",
+                   "id": "title",
+                   "label": "Collection Title",
+                   "default": "All Collection"
+                },
+                {
+                    "type": "collection",
+                    "id": "collection",
+                    "label": "Collection"
+                }
+             ]
+          }
+       ],
+       "presets": [
+          {
+             "name": "Shofy-product-tab"
+          }
+       ]
+    }
+ {% endschema %}

@@ -250,6 +250,10 @@
           "label": "Twitter",
           "info": "https:\/\/twitter.com\/shopify"
         },
+        "social_linkedin_link": {
+          "label": "LinkedIN",
+          "info": "https:\/\/linkedin.com\/shopify"
+        },
         "social_facebook_link": {
           "label": "Facebook",
           "info": "https:\/\/facebook.com\/shopify"
