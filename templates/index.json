@@ -130,7 +130,9 @@
         "sub_title": "Shop by Category",
         "title": "This Week's Featured",
         "product_list": [
-
+          "longsleeve-cotton-top",
+          "led-high-tops",
+          "navy-sport-jacket"
         ],
         "banner_title": "Short Sleeve Tunic Tops Casual Swing",
         "btn_text": "Explore More",
@@ -139,6 +141,18 @@
     },
     "shofy_best_product": {
       "type": "shofy-best-product",
+      "blocks": {
+        "33cf9d77-478e-4260-ab2c-c056e0f9a5ae": {
+          "type": "product-tab",
+          "settings": {
+            "title": "All Collection",
+            "collection": "summer"
+          }
+        }
+      },
+      "block_order": [
+        "33cf9d77-478e-4260-ab2c-c056e0f9a5ae"
+      ],
       "settings": {
         "sub_title": "All Product Shop",
         "title": "Customer Favorite Style Product"
@@ -146,6 +160,28 @@
     },
     "shofy_testimonial": {
       "type": "shofy-testimonial",
+      "blocks": {
+        "fc20c14f-9c83-4409-9b86-24b672f149c2": {
+          "type": "testimonial",
+          "settings": {
+            "review_title": "<p>“ How you use the city or town name is up to you. All results may be freely used in any work.”<\/p>",
+            "client_name": "Theodore Handle",
+            "client_title": "CEO Founder"
+          }
+        },
+        "75c4d101-4869-4d87-877b-f1e014a243e6": {
+          "type": "testimonial",
+          "settings": {
+            "review_title": "<p>“ How you use the city or town name is up to you. All results may be freely used in any work.”<\/p>",
+            "client_name": "Theodore Handle",
+            "client_title": "CEO Founder"
+          }
+        }
+      },
+      "block_order": [
+        "fc20c14f-9c83-4409-9b86-24b672f149c2",
+        "75c4d101-4869-4d87-877b-f1e014a243e6"
+      ],
       "settings": {
         "sub_title": "The Review Are In",
         "title": "Customer Favorite Style Product"
@@ -153,6 +189,34 @@
     },
     "shofy_blog": {
       "type": "shofy-blog",
+      "blocks": {
+        "f3f5714d-37c5-4706-8eb9-7f889addb571": {
+          "type": "article",
+          "settings": {
+            "article": "news\/fast-fashion-how-clothes-are-linked-to-climate-change",
+            "collection": ""
+          }
+        },
+        "1798c234-00eb-453f-8520-ff9e2d2e3db5": {
+          "type": "article",
+          "settings": {
+            "article": "news\/the-sound-of-fashion-malcolm-mclaren-words",
+            "collection": ""
+          }
+        },
+        "6ba490a9-b38d-4fd6-baa8-30e1cd262a87": {
+          "type": "article",
+          "settings": {
+            "article": "news\/the-boomerang-employees-returning-after-quitting",
+            "collection": ""
+          }
+        }
+      },
+      "block_order": [
+        "f3f5714d-37c5-4706-8eb9-7f889addb571",
+        "1798c234-00eb-453f-8520-ff9e2d2e3db5",
+        "6ba490a9-b38d-4fd6-baa8-30e1cd262a87"
+      ],
       "settings": {
         "sub_title": "Our Blog & News",
         "title": "Latest News & Articles",
@@ -162,11 +226,79 @@
     },
     "shofy_feature": {
       "type": "shofy-feature",
+      "blocks": {
+        "755ca15c-62cb-4076-b177-2592daad8f43": {
+          "type": "feature",
+          "settings": {
+            "icon": "",
+            "sub_title": "Free Delivary",
+            "title": "Orders from all item"
+          }
+        },
+        "c3fd4209-69a5-402f-abdd-55814fab9782": {
+          "type": "feature",
+          "settings": {
+            "icon": "",
+            "sub_title": "Free Delivary",
+            "title": "Orders from all item"
+          }
+        },
+        "f879bfa3-9e58-499d-a260-4009fb790906": {
+          "type": "feature",
+          "settings": {
+            "icon": "",
+            "sub_title": "Free Delivary",
+            "title": "Orders from all item"
+          }
+        },
+        "f0a130fe-31c8-4582-be18-f1552d0149b0": {
+          "type": "feature",
+          "settings": {
+            "icon": "",
+            "sub_title": "Free Delivary",
+            "title": "Orders from all item"
+          }
+        }
+      },
+      "block_order": [
+        "755ca15c-62cb-4076-b177-2592daad8f43",
+        "c3fd4209-69a5-402f-abdd-55814fab9782",
+        "f879bfa3-9e58-499d-a260-4009fb790906",
+        "f0a130fe-31c8-4582-be18-f1552d0149b0"
+      ],
       "settings": {
       }
     },
     "shofy_instagram": {
       "type": "shofy-instagram",
+      "blocks": {
+        "9aa8b213-3998-4eb5-9d0e-6a79adaffa51": {
+          "type": "instagram",
+          "settings": {
+          }
+        },
+        "3bbe0eca-137c-4610-b778-0568e6d45d67": {
+          "type": "instagram",
+          "settings": {
+          }
+        },
+        "8985248e-96ce-433a-b230-4dd965bddf99": {
+          "type": "instagram",
+          "settings": {
+          }
+        },
+        "3781a761-cc63-4a6f-a565-410b2296a95d": {
+          "type": "instagram",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "9aa8b213-3998-4eb5-9d0e-6a79adaffa51",
+        "3bbe0eca-137c-4610-b778-0568e6d45d67",
+        "8985248e-96ce-433a-b230-4dd965bddf99",
+        "3781a761-cc63-4a6f-a565-410b2296a95d"
+      ],
       "settings": {
         "ins_url": "",
         "sub_title": "Follow Us On",
