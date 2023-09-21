@@ -1,37 +1,155 @@
 {
   "sections": {
     "shofy_slider": {
-      "type": "shofy-slider"
+      "type": "shofy-slider",
+      "blocks": {
+        "ab2fdb49-c35e-45c0-99cd-ddb65f3a1d42": {
+          "type": "slider",
+          "settings": {
+            "slider_subtitle": "New Arrivals 2023",
+            "slider_title": "The Clothing Collection",
+            "btn_text": "Shop Collection",
+            "btn_url": "",
+            "slider_img": "shopify:\/\/shop_images\/slider-2.png"
+          }
+        },
+        "cb644553-86fb-4e7e-9cad-e2cdd4b75ae6": {
+          "type": "slider",
+          "settings": {
+            "slider_subtitle": "New Arrivals 2023",
+            "slider_title": "The Clothing Collection",
+            "btn_text": "Shop Collection",
+            "btn_url": "",
+            "slider_img": "shopify:\/\/shop_images\/slider-1.png"
+          }
+        }
+      },
+      "block_order": [
+        "ab2fdb49-c35e-45c0-99cd-ddb65f3a1d42",
+        "cb644553-86fb-4e7e-9cad-e2cdd4b75ae6"
+      ],
+      "settings": {
+      }
     },
     "shofy_banner": {
-      "type": "shofy-banner"
+      "type": "shofy-banner",
+      "blocks": {
+        "5042f560-edf4-4e89-bac5-2b63a9363353": {
+          "type": "banner",
+          "settings": {
+            "banner_title": "T-Shirt Tunic Tops Blouse",
+            "title_url": "",
+            "btn_text": "Shop Now",
+            "btn_url": ""
+          }
+        },
+        "fc23732c-6db5-4c5c-a126-a076cc15aa10": {
+          "type": "banner",
+          "settings": {
+            "banner_title": "T-Shirt Tunic Tops Blouse",
+            "title_url": "",
+            "btn_text": "Shop Now",
+            "btn_url": "",
+            "banner_img": "shopify:\/\/shop_images\/banner-2.jpg"
+          }
+        },
+        "59301857-a7b4-4370-9a54-92505ba63c23": {
+          "type": "banner",
+          "settings": {
+            "banner_title": "T-Shirt Tunic Tops Blouse",
+            "title_url": "",
+            "btn_text": "Shop Now",
+            "btn_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "5042f560-edf4-4e89-bac5-2b63a9363353",
+        "fc23732c-6db5-4c5c-a126-a076cc15aa10",
+        "59301857-a7b4-4370-9a54-92505ba63c23"
+      ],
+      "settings": {
+      }
     },
     "shofy_category": {
-      "type": "shofy-catagory"
+      "type": "shofy-catagory",
+      "settings": {
+        "sub_title": "Shop by Category",
+        "title": "Popular on the Shofy store.",
+        "product_list": [
+          "blue-silk-tuxedo",
+          "bangle-bracelet-with-feathers",
+          "boho-earrings",
+          "chequered-red-shirt",
+          "choker-with-triangle"
+        ]
+      }
     },
     "shofy_product_tab": {
-      "type": "shofy-product-tab"
+      "type": "shofy-product-tab",
+      "settings": {
+        "sub_title": "All Product Shop",
+        "title": "Customer Favorite Style Product"
+      }
     },
     "shopify_product_slider": {
-      "type": "shopify-product-slider"
+      "type": "shopify-product-slider",
+      "settings": {
+        "sub_title": "Shop by Category",
+        "title": "This Week's Featured",
+        "product_list": [
+
+        ]
+      }
     },
     "shofy_tranding_product": {
-      "type": "shofy-tranding-product"
+      "type": "shofy-tranding-product",
+      "settings": {
+        "sub_title": "Shop by Category",
+        "title": "This Week's Featured",
+        "product_list": [
+
+        ],
+        "banner_title": "Short Sleeve Tunic Tops Casual Swing",
+        "btn_text": "Explore More",
+        "btn_url": ""
+      }
     },
     "shofy_best_product": {
-      "type": "shofy-best-product"
+      "type": "shofy-best-product",
+      "settings": {
+        "sub_title": "All Product Shop",
+        "title": "Customer Favorite Style Product"
+      }
     },
     "shofy_testimonial": {
-      "type": "shofy-testimonial"
+      "type": "shofy-testimonial",
+      "settings": {
+        "sub_title": "The Review Are In",
+        "title": "Customer Favorite Style Product"
+      }
     },
     "shofy_blog": {
-      "type": "shofy-blog"
+      "type": "shofy-blog",
+      "settings": {
+        "sub_title": "Our Blog & News",
+        "title": "Latest News & Articles",
+        "btn_text": "Discover More",
+        "button_url": ""
+      }
     },
     "shofy_feature": {
-      "type": "shofy-feature"
+      "type": "shofy-feature",
+      "settings": {
+      }
     },
     "shofy_instagram": {
-      "type": "shofy-instagram"
+      "type": "shofy-instagram",
+      "settings": {
+        "ins_url": "",
+        "sub_title": "Follow Us On",
+        "title": "Instagram"
+      }
     }
   },
   "order": [
